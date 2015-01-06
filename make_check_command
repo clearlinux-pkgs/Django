@@ -1,0 +1,1 @@
+pushd tests ; PYTHONPATH=..: ./runtests.py -v 2 || : ; popd

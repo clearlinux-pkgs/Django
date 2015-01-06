@@ -1,0 +1,4 @@
+# openstack (Kilo stable) needs version <1.8
+# once they update requirement, we can push >=1.8 versions
+# check: https://github.com/openstack/requirements/blob/stable/kilo/global-requirements.txt
+watchurl=https://pypi.python.org/simple/Django/ ../../packages/source/D/Django/Django-(1\.7\..*).tar.gz.*
