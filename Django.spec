@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 1.8.4
-Release  : 21
+Release  : 23
 URL      : https://www.djangoproject.com/m/releases/1.8/Django-1.8.4.tar.gz
 Source0  : https://www.djangoproject.com/m/releases/1.8/Django-1.8.4.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -13,15 +13,32 @@ License  : BSD-3-Clause MIT Python-2.0
 Requires: Django-bin
 Requires: Django-python
 BuildRequires : Django
+BuildRequires : Jinja2-python
+BuildRequires : MarkupSafe
+BuildRequires : MarkupSafe-python
+BuildRequires : Pillow
+BuildRequires : PyYAML
+BuildRequires : bcrypt
+BuildRequires : cffi
+BuildRequires : cffi-python
+BuildRequires : docutils
+BuildRequires : numpy
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : py
+BuildRequires : pycparser
+BuildRequires : pycparser-python
 BuildRequires : pytest
 BuildRequires : python-dev
+BuildRequires : python-memcached
+BuildRequires : python-mock
+BuildRequires : python-mock-python
 BuildRequires : python3-dev
 BuildRequires : pytz
+BuildRequires : selenium
 BuildRequires : setuptools
 BuildRequires : six
+BuildRequires : sqlparse
 BuildRequires : tzdata
 Patch1: CVE-2015-5143.nopatch
 Patch2: CVE-2015-5144.nopatch
