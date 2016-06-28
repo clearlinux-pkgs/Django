@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 1.8.12
-Release  : 33
+Release  : 34
 URL      : https://www.djangoproject.com/m/releases/1.8/Django-1.8.12.tar.gz
 Source0  : https://www.djangoproject.com/m/releases/1.8/Django-1.8.12.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
