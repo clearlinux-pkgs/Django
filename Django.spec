@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 1.10
-Release  : 37
+Release  : 38
 URL      : https://www.djangoproject.com/m/releases/1.10/Django-1.10.tar.gz
 Source0  : https://www.djangoproject.com/m/releases/1.10/Django-1.10.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
