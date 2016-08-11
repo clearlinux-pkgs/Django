@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 1.10
-Release  : 38
+Release  : 37
 URL      : https://www.djangoproject.com/m/releases/1.10/Django-1.10.tar.gz
 Source0  : https://www.djangoproject.com/m/releases/1.10/Django-1.10.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -42,6 +42,7 @@ BuildRequires : sqlparse
 BuildRequires : tzdata
 Patch1: CVE-2015-5143.nopatch
 Patch2: CVE-2015-5144.nopatch
+Patch3: CVE-2016-6186.nopatch
 
 %description
 The documentation in this tree is in plain text files and can be viewed using
