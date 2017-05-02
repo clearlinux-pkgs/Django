@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 1.11
-Release  : 51
+Release  : 52
 URL      : http://pypi.debian.net/Django/Django-1.11.tar.gz
 Source0  : http://pypi.debian.net/Django/Django-1.11.tar.gz
 Source99 : http://pypi.debian.net/Django/Django-1.11.tar.gz.asc
