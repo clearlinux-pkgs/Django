@@ -1,0 +1,5 @@
+# This file contains recursive sources that require this package
+Django
+django-babel
+django-pyscss
+horizon
