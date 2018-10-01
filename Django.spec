@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE17DF5C82B4F9D00 (carlton@noumenal.es)
 #
 Name     : Django
-Version  : 2.1.1
-Release  : 59
-URL      : https://files.pythonhosted.org/packages/14/c8/b6f5c67cf34ae7586258af110e53657da671325b146fcc67ac64a4daace5/Django-2.1.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/14/c8/b6f5c67cf34ae7586258af110e53657da671325b146fcc67ac64a4daace5/Django-2.1.1.tar.gz
-Source99 : https://files.pythonhosted.org/packages/14/c8/b6f5c67cf34ae7586258af110e53657da671325b146fcc67ac64a4daace5/Django-2.1.1.tar.gz.asc
+Version  : 2.1.2
+Release  : 60
+URL      : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz
+Source99 : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz.asc
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT Python-2.0
@@ -52,7 +52,7 @@ and clean, pragmatic design. Thanks for checking it out.
 %package bin
 Summary: bin components for the Django package.
 Group: Binaries
-Requires: Django-license
+Requires: Django-license = %{version}-%{release}
 
 %description bin
 bin components for the Django package.
@@ -69,7 +69,7 @@ license components for the Django package.
 %package python
 Summary: python components for the Django package.
 Group: Default
-Requires: Django-python3
+Requires: Django-python3 = %{version}-%{release}
 Provides: django-python
 
 %description python
@@ -86,15 +86,15 @@ python3 components for the Django package.
 
 
 %prep
-%setup -q -n Django-2.1.1
+%setup -q -n Django-2.1.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535824381
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1538414632
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -115,7 +115,7 @@ cp django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/
 cp django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/doc/Django/django_contrib_gis_gdal_LICENSE
 cp django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/doc/Django/django_contrib_gis_geos_LICENSE
 cp django/dispatch/license.txt %{buildroot}/usr/share/doc/Django/django_dispatch_license.txt
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -129,7 +129,7 @@ echo ----[ mark ]----
 /usr/bin/django-admin.py
 
 %files license
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/doc/Django/LICENSE
 /usr/share/doc/Django/LICENSE.python
 /usr/share/doc/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
