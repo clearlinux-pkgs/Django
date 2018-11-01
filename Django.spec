@@ -5,18 +5,18 @@
 # Source0 file verified with key 0xE17DF5C82B4F9D00 (carlton@noumenal.es)
 #
 Name     : Django
-Version  : 2.1.2
-Release  : 60
-URL      : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz
-Source99 : https://files.pythonhosted.org/packages/8b/03/4c74d3712919613f2c611e6689522df507a2753a92049009661a81b4b72f/Django-2.1.2.tar.gz.asc
+Version  : 2.1.3
+Release  : 61
+URL      : https://files.pythonhosted.org/packages/93/b1/0d6febb88712c39aced7df232d432fa22f5613c4bff246a1f4841248a60d/Django-2.1.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/93/b1/0d6febb88712c39aced7df232d432fa22f5613c4bff246a1f4841248a60d/Django-2.1.3.tar.gz
+Source99 : https://files.pythonhosted.org/packages/93/b1/0d6febb88712c39aced7df232d432fa22f5613c4bff246a1f4841248a60d/Django-2.1.3.tar.gz.asc
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT Python-2.0
-Requires: Django-bin
-Requires: Django-python3
-Requires: Django-license
-Requires: Django-python
+Requires: Django-bin = %{version}-%{release}
+Requires: Django-license = %{version}-%{release}
+Requires: Django-python = %{version}-%{release}
+Requires: Django-python3 = %{version}-%{release}
 Requires: bcrypt
 Requires: pytz
 BuildRequires : Django
@@ -86,14 +86,14 @@ python3 components for the Django package.
 
 
 %prep
-%setup -q -n Django-2.1.2
+%setup -q -n Django-2.1.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538414632
+export SOURCE_DATE_EPOCH=1541090212
 python3 setup.py build
 
 %check
@@ -103,18 +103,18 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd tests ; PYTHONPATH=..: ./runtests.py -v 2 || : ; popd
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/Django
-cp LICENSE %{buildroot}/usr/share/doc/Django/LICENSE
-cp LICENSE.python %{buildroot}/usr/share/doc/Django/LICENSE.python
-cp django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
-cp django/contrib/admin/static/admin/fonts/LICENSE.txt %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
-cp django/contrib/admin/static/admin/img/LICENSE %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_img_LICENSE
-cp django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
-cp django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
-cp django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
-cp django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/doc/Django/django_contrib_gis_gdal_LICENSE
-cp django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/doc/Django/django_contrib_gis_geos_LICENSE
-cp django/dispatch/license.txt %{buildroot}/usr/share/doc/Django/django_dispatch_license.txt
+mkdir -p %{buildroot}/usr/share/package-licenses/Django
+cp LICENSE %{buildroot}/usr/share/package-licenses/Django/LICENSE
+cp LICENSE.python %{buildroot}/usr/share/package-licenses/Django/LICENSE.python
+cp django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
+cp django/contrib/admin/static/admin/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
+cp django/contrib/admin/static/admin/img/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_img_LICENSE
+cp django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
+cp django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
+cp django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
+cp django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_gis_gdal_LICENSE
+cp django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_gis_geos_LICENSE
+cp django/dispatch/license.txt %{buildroot}/usr/share/package-licenses/Django/django_dispatch_license.txt
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -130,17 +130,17 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/Django/LICENSE
-/usr/share/doc/Django/LICENSE.python
-/usr/share/doc/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
-/usr/share/doc/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
-/usr/share/doc/Django/django_contrib_admin_static_admin_img_LICENSE
-/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
-/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
-/usr/share/doc/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
-/usr/share/doc/Django/django_contrib_gis_gdal_LICENSE
-/usr/share/doc/Django/django_contrib_gis_geos_LICENSE
-/usr/share/doc/Django/django_dispatch_license.txt
+/usr/share/package-licenses/Django/LICENSE
+/usr/share/package-licenses/Django/LICENSE.python
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_img_LICENSE
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
+/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
+/usr/share/package-licenses/Django/django_contrib_gis_gdal_LICENSE
+/usr/share/package-licenses/Django/django_contrib_gis_geos_LICENSE
+/usr/share/package-licenses/Django/django_dispatch_license.txt
 
 %files python
 %defattr(-,root,root,-)
