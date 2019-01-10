@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 2.1.4
-Release  : 65
+Release  : 66
 URL      : https://files.pythonhosted.org/packages/83/f7/4939b60c4127d5f49ccb570e34f4c59ecc222949220234a88e4f363f1456/Django-2.1.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/83/f7/4939b60c4127d5f49ccb570e34f4c59ecc222949220234a88e4f363f1456/Django-2.1.4.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -40,6 +40,7 @@ BuildRequires : selenium
 BuildRequires : six
 BuildRequires : sqlparse
 BuildRequires : tzdata
+Patch1: CVE-2019-3498.patch
 
 %description
 and clean, pragmatic design. Thanks for checking it out.
@@ -84,13 +85,18 @@ python3 components for the Django package.
 
 %prep
 %setup -q -n Django-2.1.4
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544009344
+export SOURCE_DATE_EPOCH=1547155547
+export CFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FCFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FFLAGS="$CFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CXXFLAGS="$CXXFLAGS -fstack-protector-strong -mzero-caller-saved-regs=used "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
