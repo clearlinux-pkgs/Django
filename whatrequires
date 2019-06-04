@@ -1,7 +1,9 @@
 # This file contains recursive sources that require this package
 Django
+conda
 django-appconf
 django-babel
 django-nose
 django-pyscss
 horizon
+hypothesis
