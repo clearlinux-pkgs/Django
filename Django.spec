@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 2.2.2
-Release  : 71
+Release  : 72
 URL      : https://files.pythonhosted.org/packages/56/2e/c0495314c0bdcf19d9b888a98ff16a4c58a90dd77ed741f4dbab2cbf7efe/Django-2.2.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/56/2e/c0495314c0bdcf19d9b888a98ff16a4c58a90dd77ed741f4dbab2cbf7efe/Django-2.2.2.tar.gz
 Source99 : https://files.pythonhosted.org/packages/56/2e/c0495314c0bdcf19d9b888a98ff16a4c58a90dd77ed741f4dbab2cbf7efe/Django-2.2.2.tar.gz.asc
