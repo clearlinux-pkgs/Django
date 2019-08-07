@@ -1,5 +1,5 @@
 PKG_NAME := Django
-URL = https://files.pythonhosted.org/packages/d3/20/b447eb3d820e0d05fe83cbfb016842bd8da35f4b0f83498dca43d02aebc3/Django-2.2.3.tar.gz
+URL = https://files.pythonhosted.org/packages/19/11/3449a2071df9427e7a5c4dddee2462e88840dd968a9b0c161097154fcb0c/Django-2.2.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
