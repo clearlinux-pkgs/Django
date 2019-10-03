@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE17DF5C82B4F9D00 (carlton@noumenal.es)
 #
 Name     : Django
-Version  : 2.2.4
-Release  : 74
-URL      : https://files.pythonhosted.org/packages/19/11/3449a2071df9427e7a5c4dddee2462e88840dd968a9b0c161097154fcb0c/Django-2.2.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/19/11/3449a2071df9427e7a5c4dddee2462e88840dd968a9b0c161097154fcb0c/Django-2.2.4.tar.gz
-Source1 : https://files.pythonhosted.org/packages/19/11/3449a2071df9427e7a5c4dddee2462e88840dd968a9b0c161097154fcb0c/Django-2.2.4.tar.gz.asc
+Version  : 2.2.6
+Release  : 75
+URL      : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz
+Source1 : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz.asc
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT Python-2.0
@@ -87,14 +87,14 @@ python3 components for the Django package.
 
 
 %prep
-%setup -q -n Django-2.2.4
+%setup -q -n Django-2.2.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565195473
+export SOURCE_DATE_EPOCH=1570109203
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
