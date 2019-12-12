@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xE17DF5C82B4F9D00 (carlton@noumenal.es)
 #
 Name     : Django
-Version  : 2.2.6
-Release  : 76
-URL      : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz
-Source1 : https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz.asc
+Version  : 2.2.8
+Release  : 77
+URL      : https://files.pythonhosted.org/packages/1c/aa/f618f346b895123be44739b276099a2b418b45b2b7afb5e1071403e8d2e9/Django-2.2.8.tar.gz
+Source0  : https://files.pythonhosted.org/packages/1c/aa/f618f346b895123be44739b276099a2b418b45b2b7afb5e1071403e8d2e9/Django-2.2.8.tar.gz
+Source1  : https://files.pythonhosted.org/packages/1c/aa/f618f346b895123be44739b276099a2b418b45b2b7afb5e1071403e8d2e9/Django-2.2.8.tar.gz.asc
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause MIT Python-2.0
+License  : Apache-2.0 BSD-3-Clause CC-BY-4.0 MIT OFL-1.1 Python-2.0
 Requires: Django-bin = %{version}-%{release}
 Requires: Django-license = %{version}-%{release}
 Requires: Django-python = %{version}-%{release}
@@ -47,8 +47,9 @@ BuildRequires : sqlparse
 BuildRequires : tzdata
 
 %description
-The documentation in this tree is in plain text files and can be viewed using
-any text file viewer.
+and clean, pragmatic design. Thanks for checking it out.
+        
+        All documentation is in the "``docs``" directory and online at
 
 %package bin
 Summary: bin components for the Django package.
@@ -87,23 +88,23 @@ python3 components for the Django package.
 
 
 %prep
-%setup -q -n Django-2.2.6
+%setup -q -n Django-2.2.8
+cd %{_builddir}/Django-2.2.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570109203
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576188814
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
-export FCFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
-export FFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
-export CXXFLAGS="$CXXFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -111,17 +112,18 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/Django
-cp LICENSE %{buildroot}/usr/share/package-licenses/Django/LICENSE
-cp LICENSE.python %{buildroot}/usr/share/package-licenses/Django/LICENSE.python
-cp django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
-cp django/contrib/admin/static/admin/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
-cp django/contrib/admin/static/admin/img/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_img_LICENSE
-cp django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
-cp django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
-cp django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
-cp django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_gis_gdal_LICENSE
-cp django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/package-licenses/Django/django_contrib_gis_geos_LICENSE
-cp django/dispatch/license.txt %{buildroot}/usr/share/package-licenses/Django/django_dispatch_license.txt
+cp %{_builddir}/Django-2.2.8/LICENSE %{buildroot}/usr/share/package-licenses/Django/baf11129ce63c4eef654f39a360b31cfc7d1ac67
+cp %{_builddir}/Django-2.2.8/LICENSE.python %{buildroot}/usr/share/package-licenses/Django/571296ceccb407e3ea6ab953de302e121b7f1ad5
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md %{buildroot}/usr/share/package-licenses/Django/984d90e9257ea9b5f3b1f6edcf73aee003799aad
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/fonts/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/47b573e3824cd5e02a1a3ae99e2735b49e0256e4
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/img/LICENSE %{buildroot}/usr/share/package-licenses/Django/25180b3c1e27c6d700e4e037e53b970fe36b1f3e
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/36f58e51368ec635f663f2614d5442a638d0f3de
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md %{buildroot}/usr/share/package-licenses/Django/984d90e9257ea9b5f3b1f6edcf73aee003799aad
+cp %{_builddir}/Django-2.2.8/django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/107e6e55d2b6a23eda3d6a133466af918d458590
+cp %{_builddir}/Django-2.2.8/django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/package-licenses/Django/f0fda12a002635b7014205a973222bbc34df78de
+cp %{_builddir}/Django-2.2.8/django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/package-licenses/Django/3f9aeadb484dd83ead5656f1bc870e7685607bee
+cp %{_builddir}/Django-2.2.8/django/dispatch/license.txt %{buildroot}/usr/share/package-licenses/Django/a1f11ae702923c95226800ca5172b00b3f975386
+cp %{_builddir}/Django-2.2.8/docs/_theme/djangodocs/static/fontawesome/LICENSE.txt %{buildroot}/usr/share/package-licenses/Django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -137,17 +139,17 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/Django/LICENSE
-/usr/share/package-licenses/Django/LICENSE.python
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_css_vendor_select2_LICENSE-SELECT2.md
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_fonts_LICENSE.txt
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_img_LICENSE
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_jquery_LICENSE.txt
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_select2_LICENSE.md
-/usr/share/package-licenses/Django/django_contrib_admin_static_admin_js_vendor_xregexp_LICENSE.txt
-/usr/share/package-licenses/Django/django_contrib_gis_gdal_LICENSE
-/usr/share/package-licenses/Django/django_contrib_gis_geos_LICENSE
-/usr/share/package-licenses/Django/django_dispatch_license.txt
+/usr/share/package-licenses/Django/107e6e55d2b6a23eda3d6a133466af918d458590
+/usr/share/package-licenses/Django/25180b3c1e27c6d700e4e037e53b970fe36b1f3e
+/usr/share/package-licenses/Django/36f58e51368ec635f663f2614d5442a638d0f3de
+/usr/share/package-licenses/Django/3f9aeadb484dd83ead5656f1bc870e7685607bee
+/usr/share/package-licenses/Django/47b573e3824cd5e02a1a3ae99e2735b49e0256e4
+/usr/share/package-licenses/Django/571296ceccb407e3ea6ab953de302e121b7f1ad5
+/usr/share/package-licenses/Django/984d90e9257ea9b5f3b1f6edcf73aee003799aad
+/usr/share/package-licenses/Django/a1f11ae702923c95226800ca5172b00b3f975386
+/usr/share/package-licenses/Django/baf11129ce63c4eef654f39a360b31cfc7d1ac67
+/usr/share/package-licenses/Django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2
+/usr/share/package-licenses/Django/f0fda12a002635b7014205a973222bbc34df78de
 
 %files python
 %defattr(-,root,root,-)
