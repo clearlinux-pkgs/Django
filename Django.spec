@@ -4,7 +4,7 @@
 #
 Name     : Django
 Version  : 2.2.10
-Release  : 80
+Release  : 81
 URL      : https://files.pythonhosted.org/packages/b7/69/abb0cfd9ee83209535e7021b34db6b19f4094a43a70a6e6f77da3c0ba606/Django-2.2.10.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b7/69/abb0cfd9ee83209535e7021b34db6b19f4094a43a70a6e6f77da3c0ba606/Django-2.2.10.tar.gz
 Summary  : A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
@@ -44,9 +44,8 @@ BuildRequires : sqlparse
 BuildRequires : tzdata
 
 %description
-and clean, pragmatic design. Thanks for checking it out.
-        
-        All documentation is in the "``docs``" directory and online at
+The documentation in this tree is in plain text files and can be viewed using
+any text file viewer.
 
 %package bin
 Summary: bin components for the Django package.
@@ -79,6 +78,7 @@ python components for the Django package.
 Summary: python3 components for the Django package.
 Group: Default
 Requires: python3-core
+Provides: pypi(Django)
 
 %description python3
 python3 components for the Django package.
@@ -93,15 +93,16 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581013003
+export SOURCE_DATE_EPOCH=1582917514
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export FCFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export FFLAGS="$CFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
+export CXXFLAGS="$CXXFLAGS -O3 -fcf-protection=full -ffat-lto-objects -flto=4 -fstack-protector-strong "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
