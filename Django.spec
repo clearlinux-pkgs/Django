@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 2.2.11
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/f0/5b/428db83c37c2cf69e077ed327ada3511837371356204befc654b5b4bd444/Django-2.2.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f0/5b/428db83c37c2cf69e077ed327ada3511837371356204befc654b5b4bd444/Django-2.2.11.tar.gz
 Source1  : https://files.pythonhosted.org/packages/f0/5b/428db83c37c2cf69e077ed327ada3511837371356204befc654b5b4bd444/Django-2.2.11.tar.gz.asc
@@ -82,7 +82,10 @@ python components for the Django package.
 Summary: python3 components for the Django package.
 Group: Default
 Requires: python3-core
-Provides: pypi(Django)
+Provides: pypi(django)
+Requires: pypi(asgiref)
+Requires: pypi(pytz)
+Requires: pypi(sqlparse)
 
 %description python3
 python3 components for the Django package.
@@ -97,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583436223
+export SOURCE_DATE_EPOCH=1583518418
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
