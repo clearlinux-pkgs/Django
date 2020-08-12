@@ -24,4 +24,4 @@ MarkupSafe
 MarkupSafe-python
 pycparser
 pycparser-python
-argon2_cffi
+argon2-cffi

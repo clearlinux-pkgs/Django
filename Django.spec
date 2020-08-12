@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 2.2.15
-Release  : 86
+Release  : 87
 URL      : https://files.pythonhosted.org/packages/51/b0/00dadff17778c3204bbd658dcbc9dda1d5e29fff0862ac9dd10880d8b265/Django-2.2.15.tar.gz
 Source0  : https://files.pythonhosted.org/packages/51/b0/00dadff17778c3204bbd658dcbc9dda1d5e29fff0862ac9dd10880d8b265/Django-2.2.15.tar.gz
 Source1  : https://files.pythonhosted.org/packages/51/b0/00dadff17778c3204bbd658dcbc9dda1d5e29fff0862ac9dd10880d8b265/Django-2.2.15.tar.gz.asc
@@ -17,6 +17,7 @@ Requires: Django-bin = %{version}-%{release}
 Requires: Django-license = %{version}-%{release}
 Requires: Django-python = %{version}-%{release}
 Requires: Django-python3 = %{version}-%{release}
+Requires: argon2-cffi
 Requires: bcrypt
 Requires: pytz
 Requires: sqlparse
@@ -26,7 +27,7 @@ BuildRequires : MarkupSafe
 BuildRequires : MarkupSafe-python
 BuildRequires : Pillow
 BuildRequires : PyYAML
-BuildRequires : argon2_cffi
+BuildRequires : argon2-cffi
 BuildRequires : bcrypt
 BuildRequires : buildreq-distutils3
 BuildRequires : cffi
@@ -100,7 +101,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1596492697
+export SOURCE_DATE_EPOCH=1597272423
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
