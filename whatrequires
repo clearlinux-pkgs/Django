@@ -3,10 +3,6 @@ Django
 conda
 django-appconf
 django-babel
-django-debreach
 django-nose
 django-pyscss
-enmerkar
 hypothesis
-image
-performance
