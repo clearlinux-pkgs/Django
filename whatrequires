@@ -6,3 +6,4 @@ django-babel
 django-nose
 django-pyscss
 hypothesis
+pytest
