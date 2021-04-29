@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 2.2.20
-Release  : 98
+Release  : 99
 URL      : https://files.pythonhosted.org/packages/3c/e0/2ab562729727dc25d800134f811f8e15e56fb28c44dfab5222a51b9d2b20/Django-2.2.20.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3c/e0/2ab562729727dc25d800134f811f8e15e56fb28c44dfab5222a51b9d2b20/Django-2.2.20.tar.gz
 Source1  : https://files.pythonhosted.org/packages/3c/e0/2ab562729727dc25d800134f811f8e15e56fb28c44dfab5222a51b9d2b20/Django-2.2.20.tar.gz.asc
@@ -105,10 +105,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -fzero-call-used-regs=used "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -fzero-call-used-regs=used "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -fzero-call-used-regs=used "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 -fstack-protector-strong -fzero-call-used-regs=used "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
