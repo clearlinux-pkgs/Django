@@ -1,9 +1,7 @@
 # This file contains recursive sources that require this package
 conda
 django-appconf
-django-babel
 django-nose
 django-pyscss
-gsutil
 hypothesis
 pytest
