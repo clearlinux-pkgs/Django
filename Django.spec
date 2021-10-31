@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 3.2.8
-Release  : 113
+Release  : 114
 URL      : https://files.pythonhosted.org/packages/99/f7/8d62b9881bc8923da227f4bbfa01be97d2b7c89b07237c944fe60bcad047/Django-3.2.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/99/f7/8d62b9881bc8923da227f4bbfa01be97d2b7c89b07237c944fe60bcad047/Django-3.2.8.tar.gz
 Source1  : https://files.pythonhosted.org/packages/99/f7/8d62b9881bc8923da227f4bbfa01be97d2b7c89b07237c944fe60bcad047/Django-3.2.8.tar.gz.asc
@@ -106,7 +106,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1633457553
+export SOURCE_DATE_EPOCH=1635723755
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
