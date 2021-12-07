@@ -3,5 +3,4 @@ conda
 django-appconf
 django-nose
 django-pyscss
-hypothesis
 pytest
