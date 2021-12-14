@@ -6,7 +6,7 @@
 #
 Name     : Django
 Version  : 4.0
-Release  : 116
+Release  : 117
 URL      : https://files.pythonhosted.org/packages/4c/32/390205123250b54438a6cb3e0c9b5fd0347c318df744f32b50d8e10260d0/Django-4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4c/32/390205123250b54438a6cb3e0c9b5fd0347c318df744f32b50d8e10260d0/Django-4.0.tar.gz
 Source1  : https://files.pythonhosted.org/packages/4c/32/390205123250b54438a6cb3e0c9b5fd0347c318df744f32b50d8e10260d0/Django-4.0.tar.gz.asc
